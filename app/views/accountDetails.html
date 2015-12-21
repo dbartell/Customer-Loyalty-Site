@@ -1,0 +1,15 @@
+<div class="details-view">
+  <h5 class="col-xs-12 col-md-10 col-md-offset-1 location">{{locations[local].name}}</h5>
+  <h5 class="col-xs-12 col-md-10 col-md-offset-1">Address</h5>
+  <div class="col-xs-12 col-md-10 col-md-offset-1 container">
+    <div class="address text-center">{{locations[local].settings.address.streetlines}}</div>
+    <div class="city text-center">{{locations[local].settings.address.city}}, {{locations[local].settings.address.state}} {{locations[local].settings.address.zip}}</div>
+  </div>
+  <h5 class="col-xs-12 col-md-10 col-md-offset-1">Offers</h5>
+    <div class="col-xs-12 col-md-10 col-md-offset-1 offers">
+      <div class="list-group-item" ng-repeat="offer in offers">
+        <div class="name">{{offer.name}}</div>
+        <div class="loyalty">Loyalty Points: {{offer.points}}</div>
+      </div>
+    </div>
+</div>

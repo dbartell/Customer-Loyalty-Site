@@ -1,0 +1,38 @@
+.profile-view {
+  .ng-dirty input.ng-invalid {
+    border-color: red;
+  }
+  h1 {
+    margin-top: 25px;
+  }
+  .form-group {
+    .help-block {
+      color: red;
+      i {
+        color: red;
+      }
+    }
+  }
+  .row {
+    margin-left: 0px;
+    margin-right: 0px;
+    .month {
+      padding-left: 0;
+      padding-right: 5px;
+    }
+    .day {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+    .year {
+      padding-left: 5px;
+      padding-right: 0;
+    }
+    .input {
+      margin-bottom: 25px;
+    }
+  }
+  .btn-primary {
+    margin-top: 35px;
+  }
+}

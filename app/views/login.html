@@ -1,0 +1,49 @@
+<div class="row login-view">
+	<div class="col-md-6 col-md-offset-3 col-xs-10 col-xs-offset-1">
+		<h1 class="text-center" ng-if="!ctrl.messageSent">Loyalty Rewards</h1>
+		<!-- Error message.  This would be nice to handle one time globally with a toast or some similar plugin -->
+		<div ng-if="ctrl.error" class="alert alert-danger" ng-cloak>{{ctrl.error}}</div>
+		<div ng-if="ctrl.messageSent" class="row message-sent">
+				<h4 class="text-center col-xs-8 col-xs-offset-2">Your password has been sent to you.</h4>
+				<div class="col-xs-6 col-xs-offset-3">
+				<a class="btn btn-primary center-block" ng-click="ctrl.messageSent = false; ctrl.forgotPassword = false;">I Got It!</a>
+				</div>
+		</div>
+
+		<form ng-submit="ctrl.login()" ng-if="!ctrl.messageSent" id="login-form" role="form" data-toggle="validator">
+			<div class="form-group">
+				<label for="phone">Phone Number*</label>
+				<input ng-model="ctrl.contact.phone" type="string" class="form-control" id="phone" placeholder="Phone Number">
+			</div>
+			<div class="form-group">
+				<label for="forgot-password">
+					<input id="forgot-password" type="radio" name="forgotPassword" ng-model="ctrl.forgotPassword" ng-value="true">
+					I forgot my password.
+				</label>
+				<br />
+				<label for="know-password">
+					<input id="know-password" type="radio" name="forgotPassword" ng-model="ctrl.forgotPassword" ng-value="false">
+					I know my password.
+				</label>
+			</div>
+			<div class="form-group" ng-if="!ctrl.forgotPassword">
+				<label for="password-selection">Password*</label>
+				<input ng-model="ctrl.contact.password" type="password" class="form-control" id="password-selection" placeholder="Password">
+			</div>
+			<div class="form-group" ng-if="ctrl.forgotPassword">
+				Insert recaptcha here
+				<!--
+				<div
+						vc-recaptcha
+						theme="'light'"
+						key="model.key"
+						on-create="setWidgetId(widgetId)"
+						on-success="setResponse(response)"
+						on-expire="cbExpiration()"
+				></div>
+				-->
+			</div>
+			<button type="submit" class="btn btn-primary col-xs-12">Login</button>
+		</form>
+	</div>
+</div>

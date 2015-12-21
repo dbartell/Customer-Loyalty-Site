@@ -1,0 +1,17 @@
+<div class="offers-view">
+  <div class="row">
+    <div class="points col-xs-10 col-xs-offset-1 col-sm-4 col-sm-offset-4 col-md-4 col-md-offset-1">
+      <div class="words">You Have</div>
+      <div class="numbers" ng-if="!$auth.contact.punchcard0">0</div>
+      <div class="numbers" ng-if="$auth.contact.punchcard0">{{$auth.contact.punchcard0}}</div>
+      <div class="words">Loyalty Points</div>
+    </div>
+    <div class="offers col-xs-12 col-md-5 col-md-offset-1">
+      <div class="list-group-item" ng-repeat="offer in offers">
+        <div class="name">{{offer.name}}</div>
+        <div class="loyalty" ng-cloak>Loyalty Points: {{offer.points}}</div>
+        <div class="locations">{{offer.account_id.join(", ")}}</div>
+      </div>
+    </div>
+  </div>
+</div>
